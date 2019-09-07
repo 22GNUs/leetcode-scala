@@ -5,12 +5,12 @@ import org.scalatest.{Matchers, WordSpec}
   *@since 1.0
   */
 class SolutionTest extends WordSpec with Matchers {
-  "two sum test case" in {
+  "1.two-sum test case" in {
     val ret = Q1.twoSum(Array(3, 3), 6)
     ret should ===(Array(0, 1))
   }
 
-  "add two number test case" in {
+  "2.add-two-numbers test case" in {
     def buildNode(args: Int*): ListNode = args.toList match {
       case Nil => null
       case x :: xs =>
@@ -28,6 +28,18 @@ class SolutionTest extends WordSpec with Matchers {
     val lst = toList(ret)
     println(lst)
     lst should ===(List(7, 0, 8))
+  }
+
+  "3.longest-substring-without-repeating-characters test case" in {
+    val testMap = Map(
+      "dvdf" -> 3,
+      "abcabc" -> 3
+    )
+    for ((a, s) <- testMap) {
+      val ret = Q3SlideWindow.lengthOfLongestSubstring(a)
+      println(s"$a -> $s")
+      ret should ===(s)
+    }
   }
 
 }
