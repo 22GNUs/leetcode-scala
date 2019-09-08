@@ -39,6 +39,7 @@ object Q3SlideWindow {
         // 注意点是这里的第一个参数是s而不是s.tail
         // 因为遇到已存在的情况有可能需要多次删除而不是只删除一次
         // 也就是这个原因导致这里可能有2n的复杂度
+        // list的contains方法复杂度也是O(n), 所以要性能完美的话还是需要set+索引的方式
         if (window.contains(h)) loop(s, window.tail, acc)
         else {
           val ns = window :+ h
