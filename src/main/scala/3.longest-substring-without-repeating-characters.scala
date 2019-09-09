@@ -15,7 +15,7 @@ object Q3BruteForce {
     def loop(s: String, max: Int): Int = {
       if (s.isEmpty) max
       else {
-        lazy val x = findNonRepeat(s, "")
+        val x = findNonRepeat(s, "")
         loop(s.tail, if (x > max) x else max)
       }
     }
