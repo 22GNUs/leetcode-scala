@@ -31,12 +31,18 @@ class SolutionTest extends WordSpec with Matchers {
   }
 
   "3.longest-substring-without-repeating-characters test case" in {
-    val testMap = Map(
-      "dvdf" -> 3,
-      "abcabc" -> 3
-    )
+    val testMap = Map("dvdf" -> 3, "abcabc" -> 3)
     for ((a, s) <- testMap) {
       val ret = Q3SlideWindow.lengthOfLongestSubstring(a)
+      println(s"$a -> $s")
+      ret should ===(s)
+    }
+  }
+
+  "5.longest-palindromic-substring test case" in {
+    val testMap = Map("a" -> "a")
+    for ((a, s) <- testMap) {
+      val ret = Q5.longestPalindrome(a)
       println(s"$a -> $s")
       ret should ===(s)
     }
