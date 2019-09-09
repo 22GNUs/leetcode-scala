@@ -4,18 +4,18 @@
 object Q3BruteForce {
   def lengthOfLongestSubstring(s: String): Int = {
     @scala.annotation.tailrec
-    def findNonRepeat(s: String, acc: String): Int = {
+    def maxNonRepeat(s: String, acc: String): Int = {
       if (s.isEmpty) acc.length
       else {
         if (acc.contains(s.head)) acc.length
-        else findNonRepeat(s.tail, s.head +: acc)
+        else maxNonRepeat(s.tail, s.head +: acc)
       }
     }
     @scala.annotation.tailrec
     def loop(s: String, max: Int): Int = {
       if (s.isEmpty) max
       else {
-        val x = findNonRepeat(s, "")
+        val x = maxNonRepeat(s, "")
         loop(s.tail, if (x > max) x else max)
       }
     }

@@ -48,4 +48,9 @@ class SolutionTest extends WordSpec with Matchers {
     }
   }
 
+  "6.zigzag-conversion test case" in {
+    val ret = Q6.convert("LEETCODEISHIRING", 3)
+    ret should ===("LCIRETOESIIGEDHN")
+  }
+
 }
