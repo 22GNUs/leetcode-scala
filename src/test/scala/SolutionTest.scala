@@ -40,9 +40,9 @@ class SolutionTest extends WordSpec with Matchers {
   }
 
   "5.longest-palindromic-substring test case" in {
-    val testMap = Map("a" -> "a")
+    val testMap = Map("abcab" -> "abc")
     for ((a, s) <- testMap) {
-      val ret = Q5.longestPalindrome(a)
+      val ret = Q5DP.longestPalindrome(a)
       println(s"$a -> $s")
       ret should ===(s)
     }
