@@ -51,6 +51,10 @@ class SolutionTest extends WordSpec with Matchers {
     multiAssert(Map(123 -> 321), Q7.reverse)
   }
 
+  "9.palindrome-number test case" in {
+    multiAssert(Map(121 -> true, 12321 -> true, 123 -> false), Q9.isPalindrome)
+  }
+
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
     for ((a, s) <- kv) {
       val ret = f(a)
