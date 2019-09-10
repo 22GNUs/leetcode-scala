@@ -40,17 +40,23 @@ class SolutionTest extends WordSpec with Matchers {
   }
 
   "5.longest-palindromic-substring test case" in {
-    val testMap = Map("abcab" -> "abc")
-    for ((a, s) <- testMap) {
-      val ret = Q5DP.longestPalindrome(a)
-      println(s"$a -> $s")
-      ret should ===(s)
-    }
+    multiAssert(Map("abcab" -> "abc"), Q5DP.longestPalindrome)
   }
 
   "6.zigzag-conversion test case" in {
-    val ret = Q6.convert("LEETCODEISHIRING", 3)
-    ret should ===("LCIRETOESIIGEDHN")
+    multiAssert(Map("LEETCODEISHIRING" -> "LCIRETOESIIGEDHN"), Q6.convert(_, 3))
+  }
+
+  "7.reverse-integers test case" in {
+    multiAssert(Map(123 -> 321), Q7.reverse)
+  }
+
+  private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
+    for ((a, s) <- kv) {
+      val ret = f(a)
+      println(s"$a -> $s")
+      ret should ===(s)
+    }
   }
 
 }
