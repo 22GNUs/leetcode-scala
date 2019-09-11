@@ -55,6 +55,10 @@ class SolutionTest extends WordSpec with Matchers {
     multiAssert(Map(121 -> true, 12321 -> true, 123 -> false), Q9.isPalindrome)
   }
 
+  "10.regular-expression-matching test case" in {
+    Solution.isMatch("aa", "a*") should ===(true)
+  }
+
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
     for ((a, s) <- kv) {
       val ret = f(a)
