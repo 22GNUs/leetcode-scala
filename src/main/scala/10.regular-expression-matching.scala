@@ -1,5 +1,4 @@
-object Solution {
-  @scala.annotation.tailrec
+object Q10 {
   def isMatch(s: String, p: String): Boolean = {
     // 定义一个object模式匹配string
     object +: {
@@ -8,15 +7,18 @@ object Solution {
       }
     }
     (s, p) match {
+      case ("", "") => true
       // 通配符后一位带 '*' 的情况
+      case ("", _ +: '*' +: pl) => isMatch("", pl)
       case (str @ sh +: sl, pattern @ ph +: '*' +: pl) =>
-        if (sh == ph) isMatch(sl, pattern) else isMatch(str, pl)
+        // 貌似没想到优化成尾递归的方法
+        isMatch(str, pl) || (sh == ph || ph == '.') && isMatch(sl, pattern)
       // 通配符 '.' 的情况
       case (_ +: sl, '.' +: pl) => isMatch(sl, pl)
       // 常规情况
-      case (sh +: sl, ph +: pl)             => (sh == ph) && isMatch(sl, pl)
-      case (str, pattern) if str == pattern => true
-      case _                                => false
+      case (sh +: sl, ph +: pl) => (sh == ph) && isMatch(sl, pl)
+      // 剩下就是pattern为""的情况
+      case _ => false
     }
   }
 }

@@ -56,7 +56,7 @@ class SolutionTest extends WordSpec with Matchers {
   }
 
   "10.regular-expression-matching test case" in {
-    Solution.isMatch("aa", "a*") should ===(true)
+    Q10.isMatch("ab", ".*") should ===(true)
   }
 
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
