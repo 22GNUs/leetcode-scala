@@ -6,7 +6,7 @@ import org.scalatest.{Matchers, WordSpec}
   */
 class SolutionTest extends WordSpec with Matchers {
   "1.two-sum test case" in {
-    val ret = Q1.twoSum(Array(2,7,11,15), 9)
+    val ret = Q1.twoSum(Array(2, 7, 11, 15), 9)
     ret should ===(Array(0, 1))
   }
 
@@ -64,7 +64,6 @@ class SolutionTest extends WordSpec with Matchers {
     ret should ===("a")
   }
 
-
   "14.longest-common-prefix - Horizontal" in {
     val ret = Q14Horizontal.longestCommonPrefix(Array("c", "acc", "ccc"))
     ret should ===("")
@@ -73,6 +72,11 @@ class SolutionTest extends WordSpec with Matchers {
   "14.longest-common-prefix - Split" in {
     val ret = Q14Split.longestCommonPrefix(Array("c", "acc", "ccc"))
     ret should ===("")
+  }
+
+  "15.3sum" in {
+    val ret = Q15.threeSum(Array(0, 0, 0))
+    ret should ===(List(List(0, 0, 0)))
   }
 
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
