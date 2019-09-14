@@ -59,6 +59,17 @@ class SolutionTest extends WordSpec with Matchers {
     Q10.isMatch("ab", ".*") should ===(true)
   }
 
+  "14.longest-common-prefix - Vertical" in {
+    val ret = Q14Vertical.longestCommonPrefix(Array("aa", "a"))
+    ret should ===("a")
+  }
+
+
+  "14.longest-common-prefix - Horizontal" in {
+    val ret = Q14Horizontal.longestCommonPrefix(Array("c", "acc", "ccc"))
+    ret should ===("")
+  }
+
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
     for ((a, s) <- kv) {
       val ret = f(a)
