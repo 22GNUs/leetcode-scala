@@ -50,11 +50,9 @@ object Q14Vertical {
 object Q14Horizontal {
   def longestCommonPrefix(strs: Array[String]): String = {
     @scala.annotation.tailrec
-    def longestCommon(s1: String, s2: String): String = {
+    def longestCommon(s1: String, s2: String): String =
       if (s1.isEmpty || s2.indexOf(s1) == 0) s1
-      // 截取s1后继续
       else longestCommon(s1.slice(0, s1.length - 1), s2)
-    }
     if (strs.isEmpty) "" else strs.reduce(longestCommon)
   }
 }
