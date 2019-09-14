@@ -6,7 +6,7 @@ import org.scalatest.{Matchers, WordSpec}
   */
 class SolutionTest extends WordSpec with Matchers {
   "1.two-sum test case" in {
-    val ret = Q1.twoSum(Array(3, 3), 6)
+    val ret = Q1.twoSum(Array(2,7,11,15), 9)
     ret should ===(Array(0, 1))
   }
 
