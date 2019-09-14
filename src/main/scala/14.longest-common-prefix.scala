@@ -44,15 +44,39 @@ object Q14Vertical {
 }
 
 /**
+  * 由于多个方法都依赖该方法, 所以抽出来, 单独提交可以定义在方法内
+  */
+private object Helper {
+  @scala.annotation.tailrec
+  def longestCommon(s1: String, s2: String): String =
+    // indexOf == 0是关键,必须在首部匹配才是对的
+    if (s1.isEmpty || s2.indexOf(s1) == 0) s1
+    else longestCommon(s1.slice(0, s1.length - 1), s2)
+}
+
+/**
   * 水平扫描法
   * 每次循环判断是否有重合, 没有重合则把s1截取一位后再判断
   */
 object Q14Horizontal {
+  import Helper._
   def longestCommonPrefix(strs: Array[String]): String = {
-    @scala.annotation.tailrec
-    def longestCommon(s1: String, s2: String): String =
-      if (s1.isEmpty || s2.indexOf(s1) == 0) s1
-      else longestCommon(s1.slice(0, s1.length - 1), s2)
     if (strs.isEmpty) "" else strs.reduce(longestCommon)
+  }
+}
+
+/**
+  * 分治法
+  */
+object Q14Split {
+  import Helper._
+  def longestCommonPrefix(strs: Array[String]): String = {
+    if (strs.isEmpty) ""
+    else if (strs.length == 1) strs(0)
+    else if (strs.length == 2) longestCommon(strs(0), strs(1))
+    else {
+      val (left, right) = strs.splitAt(strs.length / 2)
+      longestCommon(longestCommonPrefix(left), longestCommonPrefix(right))
+    }
   }
 }

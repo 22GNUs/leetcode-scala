@@ -70,6 +70,11 @@ class SolutionTest extends WordSpec with Matchers {
     ret should ===("")
   }
 
+  "14.longest-common-prefix - Split" in {
+    val ret = Q14Split.longestCommonPrefix(Array("c", "acc", "ccc"))
+    ret should ===("")
+  }
+
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
     for ((a, s) <- kv) {
       val ret = f(a)
