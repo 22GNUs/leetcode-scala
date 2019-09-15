@@ -1,4 +1,4 @@
-object Solution {
+object Q20 {
   def isValid(s: String): Boolean = {
     if (s.isEmpty) true
     else {
