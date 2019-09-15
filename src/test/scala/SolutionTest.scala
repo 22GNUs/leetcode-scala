@@ -59,6 +59,10 @@ class SolutionTest extends WordSpec with Matchers {
     Q10.isMatch("ab", ".*") should ===(true)
   }
 
+  "12.integer-to-roman" in {
+    Q12.intToRoman(20) should ===("XX")
+  }
+
   "14.longest-common-prefix - Vertical" in {
     val ret = Q14Vertical.longestCommonPrefix(Array("aa", "a"))
     ret should ===("a")
