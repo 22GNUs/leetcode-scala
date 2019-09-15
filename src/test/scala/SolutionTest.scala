@@ -83,6 +83,11 @@ class SolutionTest extends WordSpec with Matchers {
     ret should ===(List(List(0, 0, 0)))
   }
 
+  "20.valid-parentheses" in {
+    val ret = Solution.isValid("\"]\"")
+    ret shouldBe(false)
+  }
+
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
     for ((a, s) <- kv) {
       val ret = f(a)
