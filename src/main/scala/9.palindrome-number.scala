@@ -10,6 +10,7 @@ object Q9 {
     // 0 或者最后一位为0且不为0的数
     if (x < 0 || (x % 10 == 0 && x != 0)) false
     else {
+      @scala.annotation.tailrec
       def revert(s: Int, r: Int): (Int, Int) =
         if (r >= s) (s, r) else revert(s / 10, r * 10 + s % 10)
       // 提取出左半部分和右半部分

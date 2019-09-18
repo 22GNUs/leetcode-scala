@@ -4,9 +4,9 @@ import org.scalatest.{Matchers, WordSpec}
   *@author wangxinhua
   *@since 1.0
   */
-class SolutionTest extends WordSpec with Matchers {
+class Q20Test extends WordSpec with Matchers {
   "1.two-sum test case" in {
-    val ret = Q1.twoSum(Array(3, 3), 6)
+    val ret = Q1.twoSum(Array(2, 7, 11, 15), 9)
     ret should ===(Array(0, 1))
   }
 
@@ -57,6 +57,35 @@ class SolutionTest extends WordSpec with Matchers {
 
   "10.regular-expression-matching test case" in {
     Q10.isMatch("ab", ".*") should ===(true)
+  }
+
+  "12.integer-to-roman" in {
+    Q12.intToRoman(20) should ===("XX")
+  }
+
+  "14.longest-common-prefix - Vertical" in {
+    val ret = Q14Vertical.longestCommonPrefix(Array("aa", "a"))
+    ret should ===("a")
+  }
+
+  "14.longest-common-prefix - Horizontal" in {
+    val ret = Q14Horizontal.longestCommonPrefix(Array("c", "acc", "ccc"))
+    ret should ===("")
+  }
+
+  "14.longest-common-prefix - Split" in {
+    val ret = Q14Split.longestCommonPrefix(Array("c", "acc", "ccc"))
+    ret should ===("")
+  }
+
+  "15.3sum" in {
+    val ret = Q15.threeSum(Array(0, 0, 0))
+    ret should ===(List(List(0, 0, 0)))
+  }
+
+  "20.valid-parentheses" in {
+    val ret = Q20.isValid("\"]\"")
+    ret shouldBe(false)
   }
 
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {
