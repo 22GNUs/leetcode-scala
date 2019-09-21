@@ -36,7 +36,7 @@ object Q5BruteForce {
     (for {
       substrSize <- s.length to 1 by -1
       // sliding生成多个窗口, 对切割好的窗口再迭代返回
-      substr <- s.toSeq.sliding(substrSize).map(_.unwrap)
+      substr <- s.sliding(substrSize)
       if substr == substr.reverse
       // 因为是倒序遍历, 所以前面的肯定是更长的字串
     } yield substr).headOption.getOrElse("")
