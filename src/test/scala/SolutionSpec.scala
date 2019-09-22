@@ -79,6 +79,11 @@ class SolutionSpec extends WordSpec with Matchers {
     ret should ===("")
   }
 
+  "17.letter-combinations-of-a-phone-number.scala" in {
+    val ret = Solution.letterCombinations("23")
+    ret should ===(List("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"))
+  }
+
   "15.3sum" in {
     val ret = Q15.threeSum(Array(0, 0, 0))
     ret should ===(List(List(0, 0, 0)))
@@ -86,7 +91,7 @@ class SolutionSpec extends WordSpec with Matchers {
 
   "20.valid-parentheses" in {
     val ret = Q20.isValid("\"]\"")
-    ret shouldBe(false)
+    ret shouldBe (false)
   }
 
   "23" in {
