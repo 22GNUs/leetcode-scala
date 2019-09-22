@@ -1,3 +1,4 @@
+import common.ListNode
 import org.scalatest.{Matchers, WordSpec}
 
 /**
@@ -86,6 +87,29 @@ class SolutionSpec extends WordSpec with Matchers {
   "20.valid-parentheses" in {
     val ret = Q20.isValid("\"]\"")
     ret shouldBe(false)
+  }
+
+  "23" in {
+    def buildNode(lst: Array[List[Int]]): Array[ListNode] = {
+      @scala.annotation.tailrec
+      def lstToNode(lst: List[Int], acc: ListNode, ret: ListNode): ListNode =
+        lst match {
+          case Nil => ret
+          case x :: xs =>
+            if (acc == null) {
+              val n = new ListNode(x)
+              lstToNode(xs, n, n)
+            } else {
+              val n = new ListNode(x)
+              acc.next = n
+              lstToNode(xs, n, ret)
+            }
+        }
+      lst.map(lstToNode(_, null, null))
+    }
+    val arr = Array(List(1, 4, 5), List(1, 3, 4), List(2, 6))
+    val ret = Solution.mergeKLists(buildNode(arr))
+    println(ret)
   }
 
   private def multiAssert[K, V](kv: Map[K, V], f: K => V): Unit = {

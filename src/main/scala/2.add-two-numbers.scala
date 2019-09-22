@@ -1,3 +1,5 @@
+import common.ListNode
+
 /**
   * Definition for singly-linked list.
   * class ListNode(var _x: Int = 0) {
@@ -5,10 +7,6 @@
   *   var x: Int = _x
   * }
   */
-class ListNode(var _x: Int = 0) {
-  var next: ListNode = _
-  var x: Int = _x
-}
 object Q2 {
   def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
     var acc: ListNode = null
