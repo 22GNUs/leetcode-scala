@@ -14,7 +14,7 @@ object Q17HighOrder {
       '9' -> "wxyz"
     )
     // 每次把当前的值跟新的字母做一次for yield, 生成新的list
-    digits.view.map(map(_).map(_.toString)).foldLeft(List.empty[String]) {
+    (List.empty[String] /: digits.view.map(map(_).map(_.toString))) {
       (acc, item) =>
         if (acc.isEmpty) item.toList
         else acc.flatMap(s => item.map(s + _))
