@@ -17,11 +17,7 @@ object Q17HighOrder {
     digits.map(map(_).map(_.toString)).foldLeft(List.empty[String]) {
       (acc, item) =>
         if (acc.isEmpty) item.toList
-        else
-          for {
-            c1 <- acc
-            c2 <- item
-          } yield c1 + c2
+        else acc.flatMap(s => item.map(s + _))
     }
   }
 }
