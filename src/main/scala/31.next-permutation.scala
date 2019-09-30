@@ -1,4 +1,4 @@
-object Solution {
+object Q31 {
   def nextPermutation(nums: Array[Int]): Unit = {
     def swap(i: Int, j: Int): Unit = {
       val tmp = nums(j)
