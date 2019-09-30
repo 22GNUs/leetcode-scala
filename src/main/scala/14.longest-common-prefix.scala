@@ -17,7 +17,7 @@ object Q14Vertical {
         * 控制横向切面
         */
       @scala.annotation.tailrec
-      def extract(j: Int, c: Option[Char]): Option[Char] = {
+      def extract(j: Int, c: Option[Char]): Option[Char] =
         if (j >= strs.length) c
         else {
           val s = strs(j)
@@ -31,7 +31,6 @@ object Q14Vertical {
             }
           }
         }
-      }
       // 横向切面循环, 每次获取一个头进行比较,如果多个list在i位置都相等则返回
       // 用递归是为了解决early return的问题
       extract(0, None) match {
@@ -60,9 +59,8 @@ private object Helper {
   */
 object Q14Horizontal {
   import Helper._
-  def longestCommonPrefix(strs: Array[String]): String = {
+  def longestCommonPrefix(strs: Array[String]): String =
     if (strs.isEmpty) "" else strs.reduce(longestCommon)
-  }
 }
 
 /**
@@ -70,7 +68,7 @@ object Q14Horizontal {
   */
 object Q14Split {
   import Helper._
-  def longestCommonPrefix(strs: Array[String]): String = {
+  def longestCommonPrefix(strs: Array[String]): String =
     if (strs.isEmpty) ""
     else if (strs.length == 1) strs(0)
     else if (strs.length == 2) longestCommon(strs(0), strs(1))
@@ -78,5 +76,4 @@ object Q14Split {
       val (left, right) = strs.splitAt(strs.length / 2)
       longestCommon(longestCommonPrefix(left), longestCommonPrefix(right))
     }
-  }
 }

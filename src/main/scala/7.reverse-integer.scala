@@ -2,7 +2,7 @@ object Q7 {
   def reverse(x: Int): Int = {
     // 第二个参数用Long来处理溢出
     @scala.annotation.tailrec
-    def loop(x: Int, ret: Long): Int = {
+    def loop(x: Int, ret: Long): Int =
       if (x == 0) ret.intValue
       else {
         // 溢出
@@ -11,7 +11,6 @@ object Q7 {
         // 例如123: (123, 0) -> (12, 3) -> (1, 32) -> (0, 321) -> 321
         else loop(x / 10, ret * 10 + x % 10)
       }
-    }
     loop(x, 0)
   }
 }

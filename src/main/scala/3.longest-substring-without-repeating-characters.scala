@@ -4,21 +4,19 @@
 object Q3BruteForce {
   def lengthOfLongestSubstring(s: String): Int = {
     @scala.annotation.tailrec
-    def maxNonRepeat(s: String, acc: String): Int = {
+    def maxNonRepeat(s: String, acc: String): Int =
       if (s.isEmpty) acc.length
       else {
         if (acc.contains(s.head)) acc.length
         else maxNonRepeat(s.tail, s.head +: acc)
       }
-    }
     @scala.annotation.tailrec
-    def loop(s: String, max: Int): Int = {
+    def loop(s: String, max: Int): Int =
       if (s.isEmpty) max
       else {
         val x = maxNonRepeat(s, "")
         loop(s.tail, if (x > max) x else max)
       }
-    }
     loop(s, 0)
   }
 
@@ -32,7 +30,7 @@ object Q3BruteForce {
 object Q3SlideWindow {
   def lengthOfLongestSubstring(s: String): Int = {
     @scala.annotation.tailrec
-    def loop(s: String, window: List[Char], acc: Int): Int = {
+    def loop(s: String, window: List[Char], acc: Int): Int =
       if (s.isEmpty) acc
       else {
         val h = s.head
@@ -46,7 +44,6 @@ object Q3SlideWindow {
           loop(s.tail, ns, Math.max(ns.size, acc))
         }
       }
-    }
     loop(s, List[Char](), 0)
   }
 

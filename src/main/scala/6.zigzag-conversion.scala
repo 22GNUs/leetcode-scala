@@ -3,13 +3,13 @@
   * 参考: https://www.youtube.com/watch?v=re-WQ14s-Kg
   */
 object Q6 {
-  def convert(s: String, numRows: Int): String = {
+  def convert(s: String, numRows: Int): String =
     if (numRows == 1 || numRows >= s.length) s
     else {
       var (row, step) = (0, 1)
       // 初始化一个以row为座标, string为元素的数组
       lazy val empStr: String = ""
-      val arr: Array[String] = Array.fill[String](numRows)(empStr)
+      val arr: Array[String]  = Array.fill[String](numRows)(empStr)
       for (c <- s) {
         // 按行数更新
         arr(row) = arr(row) + c
@@ -21,5 +21,4 @@ object Q6 {
       }
       arr.mkString(empStr)
     }
-  }
 }

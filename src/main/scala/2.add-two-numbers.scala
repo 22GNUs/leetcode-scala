@@ -9,17 +9,17 @@ import common.ListNode
   */
 object Q2 {
   def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
-    var acc: ListNode = null
+    var acc: ListNode  = null
     var init: ListNode = null
-    var carry = 0
+    var carry          = 0
     @scala.annotation.tailrec
     def loop(l1: ListNode, l2: ListNode): ListNode = {
       if (l1 == null && l2 == null) {
         return init
       }
-      val ls1 = if (l1 == null) new ListNode(0) else l1
-      val ls2 = if (l2 == null) new ListNode(0) else l2
-      val sum = carry + ls1._x + ls2._x
+      val ls1  = if (l1 == null) new ListNode(0) else l1
+      val ls2  = if (l2 == null) new ListNode(0) else l2
+      val sum  = carry + ls1._x + ls2._x
       val curr = new ListNode(sum % 10)
       carry = sum / 10
 

@@ -10,7 +10,7 @@ object Q13 {
       'M' -> 1000
     )
     @scala.annotation.tailrec
-    def loop(s: String, acc: Int): Int = {
+    def loop(s: String, acc: Int): Int =
       if (s.isEmpty) acc
       else if (s.length == 1) {
         acc + m(s.head)
@@ -18,13 +18,11 @@ object Q13 {
         val curr = s.head
         val next = s.tail.head
         (curr, next) match {
-          case t @ (('I', 'V') | ('I', 'X') | ('X', 'L') | ('X', 'C') |
-              ('C', 'D') | ('C', 'M')) =>
+          case t @ (('I', 'V') | ('I', 'X') | ('X', 'L') | ('X', 'C') | ('C', 'D') | ('C', 'M')) =>
             loop(s.tail.tail, acc + m(t._2) - m(t._1))
           case (x, _) => loop(s.tail, acc + m(x))
         }
       }
-    }
     loop(s, 0)
   }
 }

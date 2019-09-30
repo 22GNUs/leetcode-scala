@@ -9,7 +9,7 @@ object Q10 {
     (s, p) match {
       case ("", "") => true
       // 通配符后一位带 '*' 的情况
-      case ("", _ +: '*' +: pl) => isMatch("", pl)
+      case ("", _ +: '*' +: pl)                        => isMatch("", pl)
       case (str @ sh +: sl, pattern @ ph +: '*' +: pl) =>
         // 貌似没想到优化成尾递归的方法
         isMatch(str, pl) || (sh == ph || ph == '.') && isMatch(sl, pattern)

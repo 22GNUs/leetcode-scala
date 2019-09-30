@@ -4,16 +4,13 @@
   * 参考https://leetcode-cn.com/problems/3sum/solution/hua-jie-suan-fa-15-san-shu-zhi-he-by-guanpengchn/
   */
 object Q15 {
-  def threeSum(nums: Array[Int]): List[List[Int]] = {
+  def threeSum(nums: Array[Int]): List[List[Int]] =
     if (nums.length < 3) Nil
     else {
       val sort = nums.sorted
-      val len = nums.length
+      val len  = nums.length
       @scala.annotation.tailrec
-      def loop(i: Int,
-               l: Int,
-               r: Int,
-               acc: List[List[Int]]): List[List[Int]] = {
+      def loop(i: Int, l: Int, r: Int, acc: List[List[Int]]): List[List[Int]] =
         if (i >= len - 1) acc
         // l > r 表示这轮循环没有找到合适的值, 增大i并清空l, r继续下一轮
         // sort(i) == sort(i - 1) 表示这轮的值跟上一轮是一样的, 没必要接着找了, 继续下一轮
@@ -44,10 +41,8 @@ object Q15 {
             else loop(i, l + 1, r, acc)
           }
         }
-      }
 
       loop(0, 1, len - 1, List.empty[List[Int]])
     }
 
-  }
 }

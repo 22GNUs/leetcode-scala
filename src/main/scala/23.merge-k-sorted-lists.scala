@@ -10,7 +10,7 @@ import common.ListNode
   * }
   */
 object Q23 {
-  def mergeKLists(lists: Array[ListNode]): ListNode = {
+  def mergeKLists(lists: Array[ListNode]): ListNode =
     if (lists == null || lists.isEmpty) null
     else {
       // 思路: 每次遍历一轮选出最小值, 将最小值添加到结果链表
@@ -42,5 +42,4 @@ object Q23 {
       }
       loop(null, null)
     }
-  }
 }

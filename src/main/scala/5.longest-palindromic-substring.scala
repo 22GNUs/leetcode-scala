@@ -32,7 +32,7 @@ object Q5DP {
   * https://stackoverflow.com/questions/15253591/scala-laziness-how-to-get-rid-of-return-statement-in-this-palindrome-search
   */
 object Q5BruteForce {
-  def longestPalindrome(s: String): String = {
+  def longestPalindrome(s: String): String =
     (for {
       substrSize <- s.length to 1 by -1
       // sliding生成多个窗口, 对切割好的窗口再迭代返回
@@ -40,5 +40,4 @@ object Q5BruteForce {
       if substr == substr.reverse
       // 因为是倒序遍历, 所以前面的肯定是更长的字串
     } yield substr).headOption.getOrElse("")
-  }
 }

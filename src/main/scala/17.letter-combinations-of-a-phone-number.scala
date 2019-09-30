@@ -14,10 +14,9 @@ object Q17HighOrder {
       '9' -> "wxyz"
     )
     // 每次把当前的值跟新的字母做一次for yield, 生成新的list
-    (List.empty[String] /: digits.view.map(map(_).map(_.toString))) {
-      (acc, item) =>
-        if (acc.isEmpty) item.toList
-        else acc.flatMap(s => item.map(s + _))
+    (List.empty[String] /: digits.view.map(map(_).map(_.toString))) { (acc, item) =>
+      if (acc.isEmpty) item.toList
+      else acc.flatMap(s => item.map(s + _))
     }
   }
 }
@@ -42,7 +41,7 @@ object Q17Rec {
       * 原理同foldLeft
       */
     @scala.annotation.tailrec
-    def loop(digits: String, acc: List[String]): List[String] = {
+    def loop(digits: String, acc: List[String]): List[String] =
       if (digits.isEmpty) acc
       else {
         // 获取一个数字
@@ -58,7 +57,6 @@ object Q17Rec {
           loop(digits.tail, next)
         }
       }
-    }
     loop(digits, List.empty[String])
   }
 }
