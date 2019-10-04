@@ -28,9 +28,3 @@ object Q31 {
     }
   }
 }
-
-object test extends App {
-  val target = Array(5, 1, 1)
-  Solution.nextPermutation(target)
-  println(target.mkString)
-}
