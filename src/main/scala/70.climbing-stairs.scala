@@ -24,3 +24,18 @@ object Q70Memo {
     loop(n)
   }
 }
+
+// 尾递归版本
+// 利用规律, 每一个后层楼梯的值等于前面两层的和
+// 类似Fib
+object Q70TailRec {
+  def climbStairs(n: Int): Int = {
+    @scala.annotation.tailrec
+    def loop(i: Int, first: Int, second: Int): Int = i match {
+      case i if i > n  => n
+      case i if i == n => first + second
+      case i           => loop(i + 1, second, first + second)
+    }
+    loop(3, 1, 2)
+  }
+}
