@@ -1,4 +1,4 @@
-import common.ListNode
+import common.scala.ListNode
 import org.scalatest.{ Matchers, WordSpec }
 
 /**

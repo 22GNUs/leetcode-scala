@@ -1,4 +1,4 @@
-import common.ListNode
+import common.scala.ListNode
 
 /**
   * Definition for singly-linked list.

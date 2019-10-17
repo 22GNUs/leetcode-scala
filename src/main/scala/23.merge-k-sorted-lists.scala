@@ -1,4 +1,4 @@
-import common.ListNode
+import common.scala.ListNode
 
 /**
   * 以后这种题还是拿Java写算了...
