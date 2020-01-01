@@ -6,11 +6,12 @@
  * 只是两条路径中如果其中一条是障碍物则无视
  * </pre>
  */
-class Q63 {
+class Solution {
   public int uniquePathsWithObstacles(int[][] obstacleGrid) {
     int m = obstacleGrid.length;
     int n = obstacleGrid[0].length;
-    int[][] dp = new int[m][n];
+    // 不开辟新的数组也没得问题
+    int[][] dp = obstacleGrid;
     for (int i = 0; i < m; i++) {
       for (int j = 0; j < n; j++) {
         // 如果该点为障碍点则为0
