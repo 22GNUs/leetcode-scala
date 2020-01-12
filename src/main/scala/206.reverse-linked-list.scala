@@ -15,7 +15,7 @@
   * </pre>
   */
 object Q206Rec {
-  def reverseList(head: ListNode): ListNode = {
+  def reverseList(head: ListNode): ListNode =
     if (head == null) null
     else if (head.next == null) head
     else {
@@ -25,5 +25,4 @@ object Q206Rec {
       head.next = null
       rev
     }
-  }
 }
