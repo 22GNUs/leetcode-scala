@@ -1,4 +1,5 @@
-import java.common.ListNode;
+import common.java.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -10,7 +11,7 @@ import java.common.ListNode;
  *     }
  * }
  */
-public class Q160 {
+class Q160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
       ListNode a = headA, b = headB;
       while (a != b) {

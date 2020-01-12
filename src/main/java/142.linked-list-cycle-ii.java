@@ -9,7 +9,7 @@ import common.java.ListNode;
  * 关键字: k=a+nb
  * </pre>
  */
-public class Q142 {
+class Q142 {
 
   public ListNode detectCycle(ListNode head) {
     if (head == null || head.next == null) {

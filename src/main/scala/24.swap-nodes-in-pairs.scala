@@ -1,3 +1,5 @@
+import common.scala.ListNode
+
 /**
  * Definition for singly-linked list.
  * class ListNode(var _x: Int = 0) {
@@ -5,7 +7,6 @@
  *   var x: Int = _x
  * }
  */
-import common.ListNode
 object Q24Rec {
     def swapPairs(head: ListNode): ListNode = {
       if (head == null || head.next == null) head       

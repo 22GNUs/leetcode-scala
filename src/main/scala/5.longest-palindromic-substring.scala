@@ -1,7 +1,7 @@
 /**
   * 动态规划实现最长回文串
   */
-object Q5DP {
+object Q5DPJava {
   def longestPalindrome(s: String): String = {
     val len = s.length
     var res = ""

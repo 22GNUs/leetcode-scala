@@ -40,7 +40,7 @@ class SolutionSpec extends WordSpec with Matchers {
     }
 
   "5.longest-palindromic-substring test case" in {
-      multiAssert(Map("abcab" -> "abc"), Q5DP.longestPalindrome)
+      multiAssert(Map("abcab" -> "abc"), Q5DPJava.longestPalindrome)
     }
 
   "6.zigzag-conversion test case" in {
