@@ -1,3 +1,5 @@
+import common.java.ListNode
+
 /**
   * Definition for singly-linked list.
   * class ListNode(var _x: Int = 0) {
