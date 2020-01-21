@@ -1,7 +1,15 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Q200Bfs {
+/**
+ * 广度优先搜索解法
+ * 思路:
+ * <pre>
+ * 首先找到岛屿节点(1), 找到后把附近所有岛屿都通过BFS置为已访问
+ * 这样每次找到的1就是一片新的岛屿
+ * </pre>
+ */
+class Q200BFS {
     public int numIslands(char[][] grid) {
       int rows = grid.length;
       if (rows == 0) {
