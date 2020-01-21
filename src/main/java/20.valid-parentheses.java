@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-class Solution {
+class Q20Java {
   public boolean isValid(String s) {
     if (s.isEmpty()) {
       return true;

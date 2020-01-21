@@ -6,7 +6,7 @@
  * 只是两条路径中如果其中一条是障碍物则无视
  * </pre>
  */
-class Solution {
+class Q63Java {
   public int uniquePathsWithObstacles(int[][] obstacleGrid) {
     int m = obstacleGrid.length;
     int n = obstacleGrid[0].length;
