@@ -1,4 +1,4 @@
-class Solution {
+class Q747 {
   public int dominantIndex(int[] nums) {
     if (nums.length == 0) {
       return -1;

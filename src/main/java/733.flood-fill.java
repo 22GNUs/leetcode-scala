@@ -1,4 +1,4 @@
-class Solution {
+class Q733 {
   public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
     fill(image, sr, sc, image[sr][sc], newColor);
     return image;
