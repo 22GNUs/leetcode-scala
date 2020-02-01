@@ -12,14 +12,9 @@ class Q700 {
     if (root.val == val) {
       return root;
     }
-    TreeNode left = searchBST(root.left, val);
-    if (left != null) {
-      return left;
+    if (val > root.val) {
+      return searchBST(root.right, val);
     }
-    TreeNode right = searchBST(root.right, val);
-    if (right != null) {
-      return right;
-    }
-    return null;
+    return searchBST(root.left, val);
   }
 }
