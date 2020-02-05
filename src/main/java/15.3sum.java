@@ -8,7 +8,7 @@ class Q15Java {
         if (nums.length < 3) return ret;
         final int len = nums.length;
         Arrays.sort(nums);
-        for (int i = 0; i < len - 1; i++) {
+        for (int i = 0; i < len - 2; i++) {
             // 因为是从小到大排序, 如果首位已经大于0了, 和不可能==0
             // nums(i) == nums(i - 1) 表示这轮的值跟上一轮是一样的, 没必要接着找了, 继续下一轮
             if (nums[i] > 0 || (i > 0 && nums[i] == nums[i - 1])) continue;
