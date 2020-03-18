@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-class Solution {
+class Q205V1 {
   public boolean isIsomorphic(String s, String t) {
     int length = s.length();
     if (length == 0) {

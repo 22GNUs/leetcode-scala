@@ -6,7 +6,7 @@
   * var right: TreeNode = null
   * }
   */
-object Q98 {
+object Q98Scala {
   import common.scala.TreeNode
   def isValidBST(root: TreeNode): Boolean = {
     def loop(root: TreeNode, low: Int, high: Int): Boolean =

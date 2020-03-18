@@ -6,7 +6,7 @@
   *   var right: common.scala.TreeNode = null
   * }
   */
-object Q94 {
+object Q94Scala {
   import common.scala.TreeNode
 
   /**
